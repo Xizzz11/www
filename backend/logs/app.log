@@ -1,0 +1,639 @@
+2025-12-16 21:54:14 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:54:14 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:54:14 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 21:54:14 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:54:14 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 21:54:14 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:54:14 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 21:54:14 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:54:14 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:54:14 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 21:54:14 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 21:54:14 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:54:14 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:54:14 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 21:54:14 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 21:54:14 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:54:14 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_d8fb0704 for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_7f04189f for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_8f53107e for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3c57fc89 for user user_123 in format pdf
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_673d57f1 for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_f97b2958 for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fab7ff29 for user user_123 in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:54:15 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 21:54:15 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:54:15 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:54:15 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:54:15 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:54:15 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:54:15 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:54:15 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:54:15 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:54:15 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_73feb9f4 for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_f6959d40 for user user_test in format pdf
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_c8a6a5e6 for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5927f68d for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ab0dbed2 for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_25761b0d for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ce9d2d48 for user user_test in format csv
+2025-12-16 21:54:15 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_2889d97a for user user_test in format csv
+2025-12-16 21:54:15 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:54:15 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:55:24 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:55:24 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:57:12 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:57:12 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:57:12 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 21:57:12 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 21:57:12 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: unknown.event
+2025-12-16 21:57:12 | WARNING  | routes.webhooks:stripe_webhook:92 - Unhandled Stripe event type: unknown.event
+2025-12-16 21:58:14 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:58:14 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:58:14 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 21:58:14 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 21:58:14 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: unknown.event
+2025-12-16 21:58:14 | WARNING  | routes.webhooks:stripe_webhook:92 - Unhandled Stripe event type: unknown.event
+2025-12-16 21:58:14 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:58:14 | INFO     | routes.webhooks:_handle_payment_succeeded:185 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 21:58:14 | ERROR    | routes.webhooks:_handle_payment_failed:202 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 21:58:14 | INFO     | routes.webhooks:_handle_payment_failed:231 - Processed failed payment pi_test456 for user user_123
+2025-12-16 21:58:34 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:58:34 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:58:34 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 21:58:34 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:58:34 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 21:58:34 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:58:34 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 21:58:34 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:58:34 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:58:34 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 21:58:34 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 21:58:34 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:58:34 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:58:34 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 21:58:34 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 21:58:34 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:58:34 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_0630c9c5 for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_a0e11e19 for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_e46898f0 for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fb008932 for user user_123 in format pdf
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_cd6b31bf for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_9cd63db3 for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5d02b373 for user user_123 in format csv
+2025-12-16 21:58:34 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:58:34 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 21:58:35 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:58:35 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:58:35 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:58:35 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:58:35 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:58:35 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:58:35 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:58:35 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:58:35 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_d1d075e2 for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_daaea1e5 for user user_test in format pdf
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_b7fe7c87 for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_90d1b3ee for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1e794c88 for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_94133fee for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fa2035e4 for user user_test in format csv
+2025-12-16 21:58:35 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5d5767fa for user user_test in format csv
+2025-12-16 21:58:35 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:58:35 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:58:35 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 21:58:35 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 21:58:35 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: unknown.event
+2025-12-16 21:58:35 | WARNING  | routes.webhooks:stripe_webhook:92 - Unhandled Stripe event type: unknown.event
+2025-12-16 21:58:35 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:58:35 | ERROR    | routes.webhooks:_handle_payment_failed:202 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 21:59:09 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:59:09 | INFO     | routes.webhooks:_handle_payment_succeeded:185 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 21:59:09 | ERROR    | routes.webhooks:_handle_payment_failed:202 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 21:59:09 | INFO     | routes.webhooks:_handle_payment_failed:231 - Processed failed payment pi_test456 for user user_123
+2025-12-16 21:59:21 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:59:21 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:59:21 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 21:59:21 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:59:21 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 21:59:21 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:59:21 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 21:59:21 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:59:21 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:59:21 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 21:59:21 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 21:59:21 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:59:21 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:59:22 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 21:59:22 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 21:59:22 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:59:22 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1adbf2d4 for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_0652169f for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ac33b811 for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ed8a404b for user user_123 in format pdf
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_dc6fff24 for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_2f3e4e31 for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ba3652be for user user_123 in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:59:22 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 21:59:22 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 21:59:22 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 21:59:22 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 21:59:22 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 21:59:22 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 21:59:22 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:59:22 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 21:59:22 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 21:59:22 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_eca113ff for user user_test in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_d3c1c68d for user user_test in format pdf
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_096292e8 for user user_test in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_7378af01 for user user_test in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_a0cb520a for user user_test in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_44168fc0 for user user_test in format csv
+2025-12-16 21:59:22 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_a54bcae6 for user user_test in format csv
+2025-12-16 21:59:23 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_88939310 for user user_test in format csv
+2025-12-16 21:59:23 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 21:59:23 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 21:59:23 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 21:59:23 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 21:59:23 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: unknown.event
+2025-12-16 21:59:23 | WARNING  | routes.webhooks:stripe_webhook:92 - Unhandled Stripe event type: unknown.event
+2025-12-16 21:59:23 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:00:12 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:00:12 | INFO     | routes.webhooks:_handle_payment_succeeded:185 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:01:37 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:01:37 | INFO     | routes.webhooks:_handle_payment_succeeded:185 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:01:50 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:01:50 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:01:50 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 22:01:50 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:01:50 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 22:01:50 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:01:50 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 22:01:50 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:01:50 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:01:50 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 22:01:50 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 22:01:50 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:01:50 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:01:51 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 22:01:51 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 22:01:51 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:01:51 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_6de2c695 for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fe2c6f2c for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_980b8f6a for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_258ce627 for user user_123 in format pdf
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1df61aad for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5f604de2 for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_bd48f60b for user user_123 in format csv
+2025-12-16 22:01:51 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:01:51 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 22:01:51 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:01:51 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:01:51 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:01:51 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:01:51 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:01:51 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:01:51 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:01:51 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:01:51 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3efaa293 for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5f3d78f8 for user user_test in format pdf
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_29b89d0e for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_95e4c1c5 for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_2b250f17 for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5251785a for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_d25ff0b1 for user user_test in format csv
+2025-12-16 22:01:52 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3590ad3b for user user_test in format csv
+2025-12-16 22:01:52 | ERROR    | routes.webhooks:stripe_webhook:47 - Missing Stripe-Signature header
+2025-12-16 22:01:52 | ERROR    | routes.webhooks:stripe_webhook:54 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:01:52 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:01:52 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:01:52 | INFO     | routes.webhooks:stripe_webhook:61 - Received Stripe webhook: unknown.event
+2025-12-16 22:01:52 | WARNING  | routes.webhooks:stripe_webhook:92 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:01:52 | INFO     | routes.webhooks:_handle_payment_succeeded:116 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:01:52 | ERROR    | routes.webhooks:_handle_payment_failed:202 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:03:19 | ERROR    | routes.webhooks:stripe_webhook:48 - Missing Stripe-Signature header
+2025-12-16 22:03:19 | ERROR    | routes.webhooks:stripe_webhook:55 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:03:19 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:03:19 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:03:19 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: unknown.event
+2025-12-16 22:03:19 | WARNING  | routes.webhooks:stripe_webhook:93 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:03:19 | INFO     | routes.webhooks:_handle_payment_succeeded:117 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:03:19 | INFO     | routes.webhooks:_handle_payment_succeeded:187 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:03:19 | ERROR    | routes.webhooks:_handle_payment_failed:204 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:03:19 | INFO     | routes.webhooks:_handle_payment_failed:234 - Processed failed payment pi_test456 for user user_123
+2025-12-16 22:03:40 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:03:40 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:03:40 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 22:03:40 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:03:40 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 22:03:40 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:03:40 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 22:03:40 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:03:40 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:03:40 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 22:03:40 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 22:03:40 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:03:40 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:03:40 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 22:03:40 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 22:03:40 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:03:40 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_811a356a for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1eea5e95 for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5ed8c320 for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_972eec8d for user user_123 in format pdf
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_dcc1a937 for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_e4dfac67 for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3fd5ba9f for user user_123 in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:03:41 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 22:03:41 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:03:41 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:03:41 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:03:41 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:03:41 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:03:41 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:03:41 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:03:41 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:03:41 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_9389375a for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_cf5dd51a for user user_test in format pdf
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_862cf045 for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1bf04688 for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_ccf21633 for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_7bbc8972 for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_4ffb3fa9 for user user_test in format csv
+2025-12-16 22:03:41 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_57f60052 for user user_test in format csv
+2025-12-16 22:03:41 | ERROR    | routes.webhooks:stripe_webhook:48 - Missing Stripe-Signature header
+2025-12-16 22:03:41 | ERROR    | routes.webhooks:stripe_webhook:55 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:03:41 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:03:41 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:03:41 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: unknown.event
+2025-12-16 22:03:41 | WARNING  | routes.webhooks:stripe_webhook:93 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:03:41 | INFO     | routes.webhooks:_handle_payment_succeeded:117 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:03:41 | INFO     | routes.webhooks:_handle_payment_succeeded:187 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:03:41 | ERROR    | routes.webhooks:_handle_payment_failed:204 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:03:41 | INFO     | routes.webhooks:_handle_payment_failed:234 - Processed failed payment pi_test456 for user user_123
+2025-12-16 22:04:04 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:04:04 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:04:04 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 22:04:04 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:04:04 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 22:04:04 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:04:04 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 22:04:04 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:04:04 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:04:04 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 22:04:04 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 22:04:04 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:04:04 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:04:04 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 22:04:04 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 22:04:04 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:04:04 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fc1c4089 for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_8e8cf6e5 for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_337574ca for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_fc04fdb7 for user user_123 in format pdf
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_8f149ef8 for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_a3d6b8f1 for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_8782af4b for user user_123 in format csv
+2025-12-16 22:04:04 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:04:04 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 22:04:04 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:04:05 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:04:05 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:04:05 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:04:05 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:04:05 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:04:05 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:04:05 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:04:05 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_1c6b907e for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_b4e6d6f9 for user user_test in format pdf
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_53da33b8 for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_82dea0e1 for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_4d598186 for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_6dbdb054 for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_bea42dd0 for user user_test in format csv
+2025-12-16 22:04:05 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_23e25ef3 for user user_test in format csv
+2025-12-16 22:04:05 | ERROR    | routes.webhooks:stripe_webhook:48 - Missing Stripe-Signature header
+2025-12-16 22:04:05 | ERROR    | routes.webhooks:stripe_webhook:55 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:04:05 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:04:05 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:04:05 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: unknown.event
+2025-12-16 22:04:05 | WARNING  | routes.webhooks:stripe_webhook:93 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:04:05 | INFO     | routes.webhooks:_handle_payment_succeeded:117 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:04:05 | INFO     | routes.webhooks:_handle_payment_succeeded:187 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:04:05 | ERROR    | routes.webhooks:_handle_payment_failed:204 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:04:05 | INFO     | routes.webhooks:_handle_payment_failed:234 - Processed failed payment pi_test456 for user user_123
+2025-12-16 22:05:58 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:05:58 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:05:58 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 22:05:58 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:05:58 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 22:05:58 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:05:58 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 22:05:58 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:05:58 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:05:58 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 22:05:58 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 22:05:58 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:05:58 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:05:58 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 22:05:58 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 22:05:58 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:05:58 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_4840f24c for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_99dc963c for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_11794af0 for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_d4c9bee2 for user user_123 in format pdf
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_477b6446 for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_2ccdb664 for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_f97bf806 for user user_123 in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:05:59 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 22:05:59 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:05:59 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:05:59 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:05:59 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:05:59 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:05:59 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:05:59 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:05:59 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:05:59 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_a33c680a for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_36cc3ac4 for user user_test in format pdf
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_b0357633 for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_33705f5b for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_b9b562c3 for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_dfba6858 for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3a342422 for user user_test in format csv
+2025-12-16 22:05:59 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_3632cdfb for user user_test in format csv
+2025-12-16 22:05:59 | ERROR    | routes.webhooks:stripe_webhook:48 - Missing Stripe-Signature header
+2025-12-16 22:05:59 | ERROR    | routes.webhooks:stripe_webhook:55 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:05:59 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:05:59 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:05:59 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: unknown.event
+2025-12-16 22:05:59 | WARNING  | routes.webhooks:stripe_webhook:93 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:05:59 | INFO     | routes.webhooks:_handle_payment_succeeded:117 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:05:59 | INFO     | routes.webhooks:_handle_payment_succeeded:187 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:05:59 | ERROR    | routes.webhooks:_handle_payment_failed:204 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:05:59 | INFO     | routes.webhooks:_handle_payment_failed:234 - Processed failed payment pi_test456 for user user_123
+2025-12-16 22:26:10 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:26:10 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:26:10 | ERROR    | services.stripe_service:create_payment_intent:123 - Stripe error creating payment intent: API Error
+2025-12-16 22:26:10 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:26:10 | ERROR    | services.stripe_service:confirm_payment:175 - Invalid request retrieving payment intent: No such payment intent
+2025-12-16 22:26:10 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:26:10 | ERROR    | services.stripe_service:create_stripe_customer:239 - Invalid request creating customer: Invalid email
+2025-12-16 22:26:10 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:26:10 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:26:10 | ERROR    | services.stripe_service:charge_customer:408 - Card error charging customer: Your card was declined
+2025-12-16 22:26:10 | INFO     | services.stripe_service:get_payment_methods:469 - Retrieved 1 payment methods for customer cus_test123
+2025-12-16 22:26:10 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:26:10 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:26:10 | INFO     | services.wallet_service:replenish_balance:498 - User user_123 deposited $100.0 successfully
+2025-12-16 22:26:10 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_123
+2025-12-16 22:26:10 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:26:10 | INFO     | services.wallet_service:withdraw_funds:683 - User user_123 requested withdrawal of $1000.0
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_41f85208 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_30da0b63 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5dcd4185 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_40a98485 for user user_123 in format pdf
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_b71a4679 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_126c6bc3 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_345d7573 for user user_123 in format csv
+2025-12-16 22:26:10 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:26:10 | INFO     | services.wallet_service:replenish_balance:329 - Created Stripe customer cus_new123 for user user_test
+2025-12-16 22:26:10 | INFO     | services.wallet_service:replenish_balance:498 - User user_test deposited $100.0 successfully
+2025-12-16 22:26:11 | INFO     | services.stripe_service:create_payment_intent:105 - Created Payment Intent pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:26:11 | INFO     | services.stripe_service:confirm_payment:163 - Retrieved Payment Intent pi_test123, status: succeeded
+2025-12-16 22:26:11 | INFO     | services.stripe_service:create_stripe_customer:231 - Created Stripe Customer cus_test123 for user user_123
+2025-12-16 22:26:11 | INFO     | services.stripe_service:charge_customer:390 - Charged customer cus_test123 $100.0
+2025-12-16 22:26:11 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:26:11 | INFO     | services.stripe_service:construct_webhook_event:539 - Received Stripe webhook event: payment_intent.succeeded
+2025-12-16 22:26:11 | ERROR    | services.stripe_service:construct_webhook_event:554 - Invalid webhook signature: Invalid signature
+2025-12-16 22:26:11 | INFO     | services.stripe_service:save_payment_method:300 - Attached payment method pm_test456 to customer cus_test123
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_5df03cc5 for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_011ac39f for user user_test in format pdf
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_f0afa790 for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_c652bd7d for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_7278b7d4 for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_60227669 for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_49a6ada8 for user user_test in format csv
+2025-12-16 22:26:11 | INFO     | services.wallet_service:export_report:1044 - Generated report RPT_20251216_bebaba8f for user user_test in format csv
+2025-12-16 22:26:11 | ERROR    | routes.webhooks:stripe_webhook:48 - Missing Stripe-Signature header
+2025-12-16 22:26:11 | ERROR    | routes.webhooks:stripe_webhook:55 - Invalid Stripe signature: Invalid signature
+2025-12-16 22:26:11 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.succeeded
+2025-12-16 22:26:11 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: payment_intent.payment_failed
+2025-12-16 22:26:11 | INFO     | routes.webhooks:stripe_webhook:62 - Received Stripe webhook: unknown.event
+2025-12-16 22:26:11 | WARNING  | routes.webhooks:stripe_webhook:93 - Unhandled Stripe event type: unknown.event
+2025-12-16 22:26:11 | INFO     | routes.webhooks:_handle_payment_succeeded:117 - Payment succeeded: pi_test123 for user user_123, amount: $100.0
+2025-12-16 22:26:11 | INFO     | routes.webhooks:_handle_payment_succeeded:187 - Successfully processed payment pi_test123 for user user_123
+2025-12-16 22:26:11 | ERROR    | routes.webhooks:_handle_payment_failed:204 - Payment failed: pi_test456 for user user_123, error: Card declined
+2025-12-16 22:26:11 | INFO     | routes.webhooks:_handle_payment_failed:234 - Processed failed payment pi_test456 for user user_123
+2025-12-16 22:30:32 | INFO     | main:lifespan:46 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:30:32 | ERROR    | main:lifespan:53 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:30:32 | WARNING  | main:lifespan:57 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:30:32 | WARNING  | main:lifespan:62 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:30:32 | INFO     | main:lifespan:64 - Server starting on 0.0.0.0:8000
+2025-12-16 22:35:28 | INFO     | main:lifespan:69 - Shutting down LOOSELINE Wallet Service...
+2025-12-16 22:35:30 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:35:30 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:35:30 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:35:30 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:35:30 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-16 22:38:22 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-16 22:38:23 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:38:23 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:38:23 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:38:23 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:38:23 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-16 22:39:44 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:39:44 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:39:44 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:39:44 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:39:44 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-16 22:40:34 | ERROR    | services.wallet_service:get_balance:214 - Error in get_balance for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:40:34 | ERROR    | services.wallet_service:get_bet_history:887 - Error in get_bet_history for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:45:50 | ERROR    | services.wallet_service:get_bet_history:887 - Error in get_bet_history for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:45:50 | ERROR    | services.wallet_service:get_balance:214 - Error in get_balance for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:45:50 | ERROR    | services.wallet_service:get_bet_history:887 - Error in get_bet_history for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:46:00 | ERROR    | services.wallet_service:get_balance:214 - Error in get_balance for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:54:45 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-16 22:54:47 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:54:47 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:54:47 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:54:47 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:54:47 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-16 22:54:47 | ERROR    | services.wallet_service:get_balance:214 - Error in get_balance for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:54:47 | ERROR    | services.wallet_service:get_bet_history:887 - Error in get_bet_history for user user_123: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:54:59 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-16 22:55:00 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 22:55:00 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 22:55:00 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 22:55:00 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 22:55:00 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-16 21:47:53 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-16 21:47:53 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-16 21:47:53 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-16 21:47:53 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-16 21:47:53 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 15:56:52 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 15:56:52 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 15:56:52 | WARNING  | main:lifespan:61 - STRIPE_SECRET_KEY not configured!
+2025-12-17 15:56:52 | WARNING  | main:lifespan:66 - STRIPE_WEBHOOK_SECRET not configured!
+2025-12-17 15:56:52 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 16:31:04 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 16:31:39 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 16:31:39 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 16:31:39 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 16:31:39 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 16:39:58 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 16:40:28 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 16:40:28 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 16:40:28 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 16:40:28 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 16:52:26 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 16:52:54 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 16:52:54 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 16:52:54 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 16:52:54 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 16:58:03 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 16:58:25 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 16:58:25 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 16:58:25 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 16:58:25 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:04:33 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:04:56 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:04:56 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 17:04:56 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:04:56 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:04:59 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:07:34 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:07:34 | ERROR    | main:lifespan:57 - Failed to initialize database: (psycopg2.Error) psycopg2 stub: real PostgreSQL connection is not available in this test environment
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-17 17:07:34 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:07:34 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:08:30 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:08:33 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:08:33 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 17:08:33 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:08:33 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:08:55 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:08:58 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:08:58 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 17:08:58 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:08:58 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:09:14 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:09:16 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:09:16 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 17:09:16 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:09:16 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:09:50 | ERROR    | services.wallet_service:get_balance:214 - Error in get_balance for user user_123: (psycopg2.errors.UndefinedColumn) column users.name does not exist
+LINE 1: ...users.id AS users_id, users.email AS users_email, users.name...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.name AS users_name, users.password_hash AS users_password_hash, users.stripe_customer_id AS users_stripe_customer_id, users.is_verified AS users_is_verified, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = %(id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': 'user_123', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-17 17:09:50 | ERROR    | services.wallet_service:get_bet_history:887 - Error in get_bet_history for user user_123: (psycopg2.errors.UndefinedColumn) column bets.bet_id does not exist
+LINE 2: FROM (SELECT bets.bet_id AS bets_bet_id, bets.user_id AS bet...
+                     ^
+HINT:  Perhaps you meant to reference the column "bets.user_id" or the column "bets.event_id".
+
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT bets.bet_id AS bets_bet_id, bets.user_id AS bets_user_id, bets.event_id AS bets_event_id, bets.odds_id AS bets_odds_id, bets.bet_type AS bets_bet_type, bets.bet_amount AS bets_bet_amount, bets.coefficient AS bets_coefficient, bets.potential_win AS bets_potential_win, bets.status AS bets_status, bets.result AS bets_result, bets.actual_win AS bets_actual_win, bets.placed_at AS bets_placed_at, bets.resolved_at AS bets_resolved_at, bets.metadata AS bets_metadata 
+FROM bets 
+WHERE bets.user_id = %(user_id_1)s) AS anon_1]
+[parameters: {'user_id_1': 'user_123'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-17 17:15:37 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:16:02 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:16:02 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 17:16:02 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:16:02 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:22:20 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 17:22:46 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 17:22:46 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 17:22:46 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 17:22:46 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 17:32:59 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 18:36:46 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 18:36:46 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 18:36:46 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 18:36:46 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:14:51 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:14:54 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:14:55 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:14:55 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:14:55 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:14:55 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:15:02 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:15:02 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:15:02 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:15:02 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:15:22 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:15:23 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:15:23 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:15:23 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:15:23 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:16:00 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:16:02 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:16:02 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:16:02 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:16:02 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:16:04 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:16:06 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:16:06 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:16:06 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:16:06 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:16:08 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:16:10 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:16:10 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:16:10 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:16:10 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-17 19:16:50 | INFO     | main:lifespan:73 - Shutting down LOOSELINE Wallet Service...
+2025-12-17 19:16:52 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-17 19:16:52 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-17 19:16:52 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-17 19:16:52 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000
+2025-12-18 13:11:05 | INFO     | main:lifespan:50 - Starting LOOSELINE Wallet Service...
+2025-12-18 13:11:05 | INFO     | main:lifespan:55 - Database initialized successfully
+2025-12-18 13:11:05 | INFO     | main:lifespan:63 - Stripe configured successfully
+2025-12-18 13:11:05 | INFO     | main:lifespan:68 - Server starting on 0.0.0.0:8000

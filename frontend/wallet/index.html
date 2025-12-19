@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOSELINE - Кошелёк</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-text">LOOSELINE</span>
+            </div>
+            <nav class="nav">
+                <a href="#history" class="nav-link" onclick="scrollToSection('history')">История и статистика</a>
+            </nav>
+            
+            <!-- Balance Button -->
+            <div class="balance-dropdown">
+                <button class="balance-btn" onclick="toggleBalanceDropdown()">
+                    <span class="balance-btn-label">Баланс</span>
+                    <span class="balance-btn-amount" id="headerBalance">$5,000.00</span>
+                    <span class="balance-btn-arrow">▼</span>
+                </button>
+                
+                <!-- Dropdown -->
+                <div class="balance-dropdown-content" id="balanceDropdown">
+                    <div class="dropdown-header">
+                        <div class="dropdown-balance">
+                            <span class="dropdown-balance-label">Текущий баланс</span>
+                            <span class="dropdown-balance-amount" id="dropdownBalance">$5,000.00</span>
+                        </div>
+                        <div class="dropdown-stats">
+                            <div class="dropdown-stat">
+                                <span class="dropdown-stat-label">Доступно</span>
+                                <span class="dropdown-stat-value" id="availableBalance">$4,750.00</span>
+                            </div>
+                            <div class="dropdown-stat">
+                                <span class="dropdown-stat-label">В ставках</span>
+                                <span class="dropdown-stat-value" id="lockedBalance">$250.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-actions">
+                        <button class="dropdown-action-btn primary" onclick="openModal('depositModal')">
+                            Пополнить
+                        </button>
+                        <button class="dropdown-action-btn secondary" onclick="openModal('withdrawModal')">
+                            Вывести
+                        </button>
+                    </div>
+                    <div class="dropdown-footer">
+                        <a href="#" class="dropdown-link" onclick="scrollToSection('history')">История операций</a>
+                        <a href="#" class="dropdown-link" onclick="scrollToSection('stats')">Статистика</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - Single Page -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Section: Overview -->
+            <section class="section" id="overview">
+                <div class="section-header">
+                    <h2 class="section-title">Обзор</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Всего пополнено</div>
+                        <div class="stat-value" id="totalDeposited">$10,000.00</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Всего выведено</div>
+                        <div class="stat-value" id="totalWithdrawn">$5,000.00</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="stat-label">Прибыль</div>
+                        <div class="stat-value positive" id="netProfit">+$2,180.00</div>
+                        <div class="stat-change" id="profitPercent">+87.2%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Win Rate</div>
+                        <div class="stat-value" id="winRate">64%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="winRateBar" style="width: 64%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">ROI</div>
+                        <div class="stat-value" id="roi">87.2%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill roi" id="roiBar" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Всего ставок</div>
+                        <div class="stat-value" id="totalBets">25</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Statistics Chart -->
+            <section class="section" id="stats">
+                <div class="section-header">
+                    <h2 class="section-title">Статистика баланса</h2>
+                    <div class="section-actions">
+                        <button class="btn-text active" onclick="setChartPeriod(7, this)">7 дней</button>
+                        <button class="btn-text" onclick="setChartPeriod(30, this)">30 дней</button>
+                        <button class="btn-text" onclick="setChartPeriod(90, this)">3 месяца</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="balanceChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Section: History -->
+            <section class="section" id="history">
+                <div class="section-header">
+                    <h2 class="section-title">История операций</h2>
+                    <div class="section-actions">
+                        <select class="filter-select" id="historyFilter" onchange="filterHistory()">
+                            <option value="all">Все</option>
+                            <option value="deposit">Депозиты</option>
+                            <option value="withdrawal">Выводы</option>
+                            <option value="bet">Ставки</option>
+                            <option value="win">Выигрыши</option>
+                        </select>
+                        <button class="btn-outline" onclick="openModal('exportModal')">
+                            Экспорт
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th onclick="sortHistory('date')">Дата</th>
+                                <th>Тип</th>
+                                <th>Описание</th>
+                                <th onclick="sortHistory('amount')">Сумма</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn" onclick="changePage(-1)">Назад</button>
+                    <span class="pagination-info" id="paginationInfo">1 / 1</span>
+                    <button class="pagination-btn" onclick="changePage(1)">Вперед</button>
+                </div>
+            </section>
+
+            <!-- Section: Payment Methods -->
+            <section class="section" id="payment-methods">
+                <div class="section-header">
+                    <h2 class="section-title">Способы оплаты</h2>
+                    <button class="btn-outline" onclick="addPaymentMethod()">Добавить карту</button>
+                </div>
+                <div class="cards-grid" id="paymentMethodsList">
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal: Deposit -->
+    <div class="modal" id="depositModal">
+        <div class="modal-overlay" onclick="closeModal('depositModal')"></div>
+        <div class="modal-content deposit-modal">
+            <div class="modal-header">
+                <div class="modal-header-content">
+                    <div class="modal-icon">💳</div>
+                    <div>
+                        <h2 class="modal-title">Пополнить баланс</h2>
+                        <p class="modal-subtitle">Безопасное пополнение через Stripe</p>
+                    </div>
+                </div>
+                <button class="modal-close" onclick="closeModal('depositModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <!-- Current Balance Info -->
+                <div class="deposit-balance-info">
+                    <div class="deposit-balance-label">Текущий баланс</div>
+                    <div class="deposit-balance-amount" id="depositCurrentBalance">$5,000.00</div>
+                </div>
+
+                <!-- Amount Section -->
+                <div class="form-group deposit-amount-section">
+                    <label class="form-label">
+                        <span>Сумма пополнения</span>
+                        <span class="form-label-hint">Мин. $1.00 • Макс. $100,000.00</span>
+                    </label>
+                    <div class="quick-amounts">
+                        <button class="quick-amount" onclick="setDepositAmount(100)">
+                            <span class="quick-amount-value">$100</span>
+                        </button>
+                        <button class="quick-amount" onclick="setDepositAmount(250)">
+                            <span class="quick-amount-value">$250</span>
+                        </button>
+                        <button class="quick-amount" onclick="setDepositAmount(500)">
+                            <span class="quick-amount-value">$500</span>
+                        </button>
+                        <button class="quick-amount" onclick="setDepositAmount(1000)">
+                            <span class="quick-amount-value">$1,000</span>
+                        </button>
+                    </div>
+                    <div class="input-with-currency deposit-amount-input">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" class="form-input" id="depositAmount" placeholder="0.00" min="1" max="100000" step="0.01">
+                    </div>
+                    <div class="deposit-preview">
+                        <div class="deposit-preview-item">
+                            <span class="deposit-preview-label">Сумма пополнения</span>
+                            <span class="deposit-preview-value" id="depositPreviewAmount">$0.00</span>
+                        </div>
+                        <div class="deposit-preview-item">
+                            <span class="deposit-preview-label">Баланс после пополнения</span>
+                            <span class="deposit-preview-value deposit-preview-total" id="depositPreviewTotal">$5,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Section -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <span>Способ оплаты</span>
+                    </label>
+                    <div class="payment-methods-list" id="depositPaymentMethods">
+                    </div>
+                </div>
+
+                <!-- Stripe Card Form -->
+                <div id="stripeCardContainer" class="form-group stripe-form-container">
+                    <label class="form-label">
+                        <span>Данные карты</span>
+                        <span class="form-label-hint">Безопасно обрабатывается через Stripe</span>
+                    </label>
+                    <div class="stripe-card-element" id="card-element"></div>
+                    <div class="stripe-error" id="card-errors"></div>
+                </div>
+
+                <!-- Save Card Option -->
+                <div class="form-checkbox deposit-save-card">
+                    <input type="checkbox" id="saveCard" checked>
+                    <label for="saveCard">
+                        <span class="checkbox-label-text">Сохранить карту для будущих платежей</span>
+                        <span class="checkbox-label-hint">Ускорит следующие пополнения</span>
+                    </label>
+                </div>
+
+                <!-- Security Info -->
+                <div class="deposit-security-info">
+                    <div class="security-icon">🔒</div>
+                    <div class="security-text">
+                        <strong>Безопасные платежи</strong>
+                        <span>Ваши данные защищены шифрованием SSL и обрабатываются через Stripe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('depositModal')">Отмена</button>
+                <button class="btn-primary btn-deposit" id="depositBtn" onclick="processDeposit()">
+                    <span class="btn-icon">✓</span>
+                    <span>Пополнить баланс</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Withdraw -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-overlay" onclick="closeModal('withdrawModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Вывести средства</h2>
+                <button class="modal-close" onclick="closeModal('withdrawModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="available-balance-box">
+                    <span>Доступно:</span>
+                    <span class="available-amount" id="withdrawAvailable">$4,750.00</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Сумма вывода</label>
+                    <div class="input-with-currency">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" class="form-input" id="withdrawAmount" placeholder="0.00" min="10">
+                    </div>
+                    <div class="form-hints">
+                        <span>Минимум: $10 | Максимум: $50,000/день</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Способ вывода</label>
+                    <div class="withdrawal-methods-list" id="withdrawalMethods">
+                    </div>
+                </div>
+                <div class="info-box">
+                    <p>Срок обработки: 1-2 рабочих дня</p>
+                    <p>Комиссия: 0%</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('withdrawModal')">Отмена</button>
+                <button class="btn-primary" onclick="processWithdraw()">Вывести</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Export -->
+    <div class="modal" id="exportModal">
+        <div class="modal-overlay" onclick="closeModal('exportModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Экспорт отчета</h2>
+                <button class="modal-close" onclick="closeModal('exportModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Период</label>
+                    <div class="date-range">
+                        <input type="date" class="form-input" id="exportDateFrom">
+                        <span>—</span>
+                        <input type="date" class="form-input" id="exportDateTo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Формат</label>
+                    <div class="format-options">
+                        <label class="format-option selected">
+                            <input type="radio" name="format" value="csv" checked>
+                            <span>CSV</span>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="format" value="pdf">
+                            <span>PDF</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('exportModal')">Отмена</button>
+                <button class="btn-primary" onclick="exportReport()">Скачать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Success -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay" onclick="closeModal('successModal')"></div>
+        <div class="modal-content modal-sm">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h3 id="successTitle">Успешно</h3>
+                <p id="successMessage"></p>
+                <button class="btn-primary" onclick="closeModal('successModal')">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
